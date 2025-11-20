@@ -1,0 +1,579 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+        body{background:#f4f4f8;color:#222;line-height:1.6;}
+        header{background:#2b4eff;color:#fff;padding:30px 20px;text-align:center;}
+        header h1{font-size:32px;margin-bottom:10px;}
+        header p{opacity:.9;}
+
+        .container{
+            display:flex;max-width:1200px;margin:40px auto;gap:25px;padding:0 15px;
+            /* Thêm hiệu ứng load */
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* SIDEBAR */
+        .sidebar{width:280px;background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.08);}      
+        .sidebar h3{margin-bottom:12px;font-size:20px;color:#2b4eff;}
+        
+        .sidebar input,.sidebar select{
+            width:100%;padding:10px;margin:8px 0 15px;border:1px solid #ccc;border-radius:6px;
+            /* Thêm hiệu ứng chuyển động */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* HIỆU ỨNG MỚI: Focus (khi nhấp vào) */
+        .sidebar input:focus, .sidebar select:focus {
+            border-color: #2b4eff; /* Đổi màu viền */
+            box-shadow: 0 0 8px rgba(43, 78, 255, 0.3); /* Thêm quầng sáng */
+            outline: none; /* Bỏ viền mặc định của trình duyệt */
+        }
+
+        .sidebar button{
+            width:100%;padding:10px;background:#2b4eff;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;
+            /* Thêm hiệu ứng chuyển động */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        /* HIỆU ỨNG MỚI: Hover (di chuột) và Active (nhấn) */
+        .sidebar button:hover {
+            background-color: #223cdd; /* Màu đậm hơn */
+        }
+        .sidebar button:active {
+            transform: scale(0.98); /* Hiệu ứng lún xuống */
+        }
+
+
+        /* MAIN CONTENT */
+        .results{flex:1;}
+        .results h2{margin-bottom:20px;color:#333;}
+
+        .card{
+            background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;box-shadow:0 4px 10px rgba(0,0,0,0.06);
+            /* Thêm hiệu ứng chuyển động */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* HIỆU ỨNG MỚI: Hover (di chuột) */
+        .card:hover {
+            transform: translateY(-5px); /* Nâng card lên 5px */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1); /* Bóng mờ to hơn */
+        }
+       
+        .card h3{color:#2b4eff;margin-bottom:8px;}
+        .card p{margin:5px 0;}
+        .tag{display:inline-block;background:#e6ecff;color:#2b4eff;padding:4px 10px;border-radius:20px;font-size:12px;margin-top:8px;}
+        
+        /* CSS CHO BANNER */
+        .banner {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .banner img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover; 
+            display: block; 
+        }
+        .banner-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+        .banner-overlay h2 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        /* CSS CHO KHU VỰC NHÀ NGHIÊN CỨU */
+        .researchers {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+            /* Thêm hiệu ứng load */
+            animation: fadeIn 0.6s ease-out;
+        }
+        .researchers-title {
+            margin-bottom: 20px;
+            color: #2b4eff;
+            text-align: center;
+        }
+        .researchers-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .researcher-card {
+            width: 250px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            text-align: center;
+            /* Thêm hiệu ứng chuyển động */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* HIỆU ỨNG MỚI: Hover (di chuột) */
+        .researcher-card:hover {
+            transform: translateY(-5px); /* Nâng card lên 5px */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Bóng mờ to hơn */
+        }
+
+        .researcher-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+        .researcher-card h3 {
+            margin-top: 10px;
+            color: #2b4eff;
+        }
+
+        /* FOOTER */
+        footer{text-align:center;padding:20px 0;margin-top:40px;color:#555;}
+        footer span{color:#2b4eff;font-weight:bold;}
+
+        /* HIỆU ỨNG MỚI: Keyframes cho hiệu ứng tải trang (fadeIn) */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px); /* Bắt đầu từ 15px bên dưới */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Di chuyển về vị trí 0 */
+            }
+        }
+
+
+        /* RESPONSIVE */
+        @media(max-width:900px){
+            .container{flex-direction:column;}
+            .sidebar{width:100%;}
+        }
+        @media(max-width:600px){
+            .researcher-card {
+                width: 100%; 
+                max-width: 300px; 
+            }
+            .banner-overlay {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+            }
+            .banner-overlay h2 {
+                font-size: 24px;
+            }
+        }
+        .card {
+    background-color: #ffffff;      /* Đặt nền màu trắng cho thẻ */
+    border: 1px solid #e0e0e0;      /* Thêm một đường viền xám nhạt */
+    border-radius: 8px;           /* Đây là bo tròn góc như bạn muốn */
+    padding: 24px;                /* Khoảng cách đệm bên trong thẻ */
+    margin-bottom: 20px;          /* Khoảng cách giữa các thẻ */
+    
+    /* Đây là phần đổ bóng cho thẻ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    
+    /* Thêm hiệu ứng mượt mà khi di chuột */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Thêm hiệu ứng khi người dùng di chuột vào */
+.card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px); /* Hơi nhấc thẻ lên một chút */
+}
+
+/* --- (NÊN GIỮ) CSS phân dòng từ lần trước --- */
+
+.card p {
+    white-space: pre-line; /* Giữ lại các dấu xuống dòng trong văn bản */
+    line-height: 1.6;      
+    color: #333;           
+}
+
+.card p strong {
+    display: block;        
+    margin-bottom: 5px;
+    color: #000;
+}
+/* --- Header --- */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Màu xanh đậm khoa học */
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+/* --- Sidebar Container --- */
+.sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;       /* Bo góc giống thẻ Card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Đổ bóng giống thẻ Card */
+    height: fit-content;      /* Chiều cao ôm vừa đủ nội dung */
+}
+
+.sidebar h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    border-left: 4px solid #2a5298; /* Tạo điểm nhấn bên trái tiêu đề */
+    padding-left: 10px;
+}
+
+.sidebar h3:first-child {
+    margin-top: 0; /* Bỏ khoảng trống thừa ở mục đầu tiên */
+}
+
+/* --- Ô nhập liệu và Select --- */
+.sidebar input[type="text"],
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ khung */
+    transition: border 0.3s;
+}
+
+.sidebar input:focus,
+.sidebar select:focus {
+    border-color: #2a5298; /* Đổi màu viền khi bấm vào */
+    outline: none;
+}
+
+/* --- Nút Tìm kiếm --- */
+.sidebar button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.sidebar button:hover {
+    background-color: #1e3c72; /* Màu đậm hơn khi di chuột */
+}
+/* --- Global Body --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font chữ hiện đại */
+    background-color: #f4f6f9; /* Màu xám xanh nhạt làm nền */
+    margin: 0;
+    color: #333;
+}
+
+/* Căn chỉnh Layout chung (để sidebar nằm cạnh kết quả) */
+.container {
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa sidebar và danh sách kết quả */
+    max-width: 1200px;
+    margin: 30px auto; /* Căn giữa trang web */
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex: 1; /* Sidebar chiếm 1 phần */
+    min-width: 250px;
+}
+
+.results {
+    flex: 3; /* Kết quả chiếm 3 phần */
+}
+/* 1. CẤU HÌNH CHUNG (RESET & FONT) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5; /* Màu nền xám xanh hiện đại */
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 2. HEADER & BANNER (PHẦN ĐẦU TRANG) */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; /* Ghim menu lên đầu khi cuộn */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    color: #102a43; /* Xanh đen sang trọng */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header p {
+    text-align: center;
+    margin: 5px 0 0;
+    color: #627d98;
+    font-size: 0.9rem;
+}
+
+/* Banner lớn có ảnh nền */
+.banner {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6); /* Làm tối ảnh để chữ nổi bật */
+}
+
+.banner-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.banner-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-overlay p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* 3. BỐ CỤC CONTAINER (CHIA CỘT) */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* 4. SIDEBAR (THANH BÊN TRÁI) */
+.sidebar {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #829ab1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar input, .sidebar select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d9e2ec;
+    border-radius: 8px;
+    background-color: #f0f4f8;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar input:focus, .sidebar select:focus {
+    background-color: #fff;
+    border-color: #334e68;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(51, 78, 104, 0.1);
+}
+
+.sidebar button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: linear-gradient(to right, #102a43, #243b53);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sidebar button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.3);
+}
+
+/* 5. PHẦN KẾT QUẢ (THẺ CARD) - QUAN TRỌNG NHẤT */
+.results {
+    flex: 3;
+}
+
+.results h2 {
+    margin-top: 0;
+    color: #102a43;
+    border-bottom: 2px solid #d9e2ec;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid #f0f4f8;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative; /* Để định vị tag */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: #d9e2ec;
+}
+
+.card h3 {
+    color: #243b53;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+/* Xử lý xuống dòng cho nội dung */
+.card p {
+    white-space: pre-line;
+    color: #486581;
+    font-size: 0.95rem;
+}
+
+/* 6. TRANG TRÍ TAG (NHÃN CHỦ ĐỀ) */
+.tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 14px;
+    background-color: #e3f2fd; /* Xanh dương nhạt */
+    color: #0d47a1; /* Chữ xanh đậm */
+    border-radius: 50px; /* Bo tròn hình viên thuốc */
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Tag Môi trường đổi màu xanh lá */
+.card:nth-child(4) .tag { /* Mẹo nhỏ để đổi màu thẻ thứ 3 trong list kết quả */
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+/* 7. PHẦN NHÀ NGHIÊN CỨU (GRID ẢNH TRÒN) */
+.researchers {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.researchers-title {
+    font-size: 2rem;
+    color: #102a43;
+    margin-bottom: 40px;
+}
+
+.researchers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.researcher-card {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.researcher-card:hover {
+    transform: scale(1.05);
+}
+
+.researcher-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Làm ảnh tròn */
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.researcher-card h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #102a43;
+}
+
+.researcher-card p {
+    color: #829ab1;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* 8. FOOTER */
+footer {
+    background-color: #102a43;
+    color: #bcccdc;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer span {
+    color: #fff;
+    font-weight: bold;
+}
